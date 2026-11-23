@@ -1,0 +1,16 @@
+[project]
+name = "codenames-lab"
+version = "0.1.0"
+description = "A Codenames engine, word models, players with uncertainty, and experiments on how clues carry meaning."
+requires-python = ">=3.12"
+dependencies = ["nltk", "numpy"]
+
+[project.optional-dependencies]
+circuit = ["yowasp-yosys"]   # Verilog synthesis for codenames_lab.circuit
+
+[tool.mypy]
+python_version = "3.12"
+
+[[tool.mypy.overrides]]
+module = ["nltk", "nltk.*"]
+ignore_missing_imports = true
